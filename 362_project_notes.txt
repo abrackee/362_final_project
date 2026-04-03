@@ -1,0 +1,32 @@
+Notes for 362 project:
+
+22MAR26
+
+made it so that keypad (connected to gpio 2-9 just like in the lab)
+will take a list of numbers entered off the keypad
+will print them off when # is typed
+use's the * as the decimal point
+
+
+Next step using the oled to display the menu.
+
+7-seg display:
+	- Always shows current time
+
+Menu:
+	1. Set Time (enter military time)
+		Sets Variable current_time to the time entered
+	2. Set Temperature
+		Sets Variable temperature to the temperature needed
+	3. Set Pump Interval
+		Sets number of hours until next pump cycle
+	4. Light Menu
+	5. Feeding Frequency (0 - dont feed, 1 - feed once a day, 2 - feed every other day, 3 - feed every 2 days)
+Light Menu
+	1. Set Time On
+	2. Set Time Off
+
+	
+April 02 Meeting
+Have current time and current temperature at the top just showing
+
