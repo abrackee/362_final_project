@@ -2,7 +2,7 @@
 #define VARIABLES_H
 
 
-extern int time_zone;
+extern int current_time;
 extern int temp_setting;
 
 #endif
