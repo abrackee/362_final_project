@@ -1,0 +1,50 @@
+﻿Which GPIO pins are being used for what:
+
+gp0 - debugger
+gp1 - debugger
+gp2 - keypad
+gp3 - keypad
+gp4 - keypad
+gp5 - keypad
+gp6 - keypad
+gp7 - keypad
+gp8 - keypad
+gp9 - keypad
+gp10
+gp11
+gp12 - lcd
+gp13 - lcd
+gp14 - lcd
+gp15 - lcd
+gp16 - lcd
+gp17 - lcd
+gp18
+gp19
+gp20
+gp21
+gp22
+gp23
+gp24
+gp25
+gp26
+gp27
+gp28
+gp29
+gp30
+gp31
+gp32
+gp33
+gp34
+gp35
+gp36
+gp37
+gp38
+gp39
+gp40
+gp41
+gp42
+gp43
+gp44
+gp45
+gp46
+gp47
