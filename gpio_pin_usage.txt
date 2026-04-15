@@ -37,7 +37,7 @@ gp33
 gp34
 gp35
 gp36
-gp37
+gp37 - LED pwm pin
 gp38
 gp39
 gp40
@@ -45,6 +45,6 @@ gp41
 gp42
 gp43
 gp44
-gp45
+gp45 - Can I dibbs this pin for the fish feeder
 gp46
 gp47
