@@ -7,6 +7,7 @@
 #include "hardware/spi.h"
 #include <math.h>   
 #include "lcd.h"
+#include "temp.h"
 
 
 void keypad_init_pins(void);
@@ -17,6 +18,8 @@ void draw_menu(void);
 void process_key(char key);
 void display_print(const uint16_t message[]);
 uint32_t key_pop(void);
+bool key_available(void);
+void update_temperature_display(void);
 
 #define PIN_SDI    15
 #define PIN_CS     13
@@ -60,15 +63,25 @@ int main(void)
 
     draw_menu();
 
+    temp_init();
+
     for (;;) {
-        uint32_t keyevent = key_pop();
-
-        uint8_t pressed = (keyevent >> 8) & 1u;
-        char key = keyevent & 0xFF;
-
-        if (pressed) {
-            process_key(key);
+        if (temp_task()) {
+            update_temperature_display();
         }
+
+        if (key_available()) {
+            uint32_t keyevent = key_pop();
+
+            uint8_t pressed = (keyevent >> 8) & 1u;
+            char key = keyevent & 0xFF;
+
+            if (pressed) {
+                process_key(key);
+            }
+        }
+
+        sleep_ms(1);
     }
 
     return 0;

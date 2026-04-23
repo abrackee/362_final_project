@@ -4,6 +4,7 @@
 #include "hardware/timer.h"
 #include "hardware/irq.h"
 #include "variables.h"
+#include "temp.h"
 
 extern char font[];
 
@@ -51,6 +52,7 @@ void LCD_DrawString(uint16_t x, uint16_t y,
 void set_time_zone(char key);
 void view_current_time(void);
 void set_water_temperature(void);
+void update_temperature_display(void);
 
 
 //////////////////////////////////////////////////////////////////////////////
@@ -69,6 +71,10 @@ void display_menu_main(void) {
     char time_str[32];
     sprintf(time_str, "Current Time:  %04d", current_time);
     LCD_DrawString(10, 130, fc, bg, time_str, size, mode);
+
+    char temp_str[32];
+    sprintf(temp_str, "Temp: %.2f C", temp_c);
+    LCD_DrawString(10, 150, fc, bg, temp_str, size, mode);
 }
 
 void display_menu_time(void) {
@@ -144,6 +150,18 @@ void draw_menu(void) {
 //////////////////////////////////////////////////////////////////////////////
 // ACTION FUNCTIONS
 //////////////////////////////////////////////////////////////////////////////
+void update_temperature_display(void) {
+    if (current_menu != MENU_MAIN) {
+        return;
+    }
+
+    char temp_str[32];
+
+    LCD_DrawString(10, 150, fc, bg, "                    ", size, mode);
+
+    sprintf(temp_str, "Temp: %.2f C", temp_c);
+    LCD_DrawString(10, 150, fc, bg, temp_str, size, mode);
+}
 
 void set_time(void) {
     char digits[5];

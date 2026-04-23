@@ -27,6 +27,12 @@ KeyEvents kev = {
     .tail = 0 
 };
 
+
+bool key_available(void) {
+    return kev.head != kev.tail;
+}
+
+
 uint8_t keypad_read_rows() {
     //return:
     //the mask of gpio pins shifted to the right by two bits
